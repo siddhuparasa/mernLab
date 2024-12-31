@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prasad V. Potluri Institute of Technology</title>
+    <style>
+        /* General reset and full height setup */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f1f1f1, #d9d9d9);
+        }
+
+        body {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            grid-template-columns: 1fr;
+        }
+
+        /* Header Section */
+        .header {
+            background: #000;
+            color: white;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .header img {
+            width: 120px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav a {
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav a:hover {
+            color: #f1c40f;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            background-image: url('images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        .hero-section p {
+            font-size: 1.25rem;
+            font-weight: 300;
+            z-index: 1;
+        }
+
+        /* Main Container */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 50px 10%;
+        }
+
+        /* About Section */
+        .about-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .about-section img {
+            width: 80%;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-section h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .about-section p {
+            font-size: 1rem;
+            line-height: 1.5;
+            text-align: justify;
+            color: #555;
+        }
+
+        /* Mission-Vision Section */
+        .mission-vision-section {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .mission-vision-section > div {
+            width: 48%;
+            padding: 20px;
+            background: #ecf0f1;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .mission-vision-section h3 {
+            font-size: 1.75rem;
+            color: #34495e;
+        }
+
+        .mission-vision-section p {
+            font-size: 1rem;
+            color: #7f8c8d;
+        }
+
+        /* Key Highlights Section */
+        .key-highlights {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .key-highlights div {
+            text-align: center;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .key-highlights div:hover {
+            transform: translateY(-10px);
+        }
+
+        .key-highlights i {
+            font-size: 3rem;
+            color: #f39c12;
+        }
+
+        .key-highlights h4 {
+            font-size: 1.25rem;
+            margin-top: 20px;
+            color: #2c3e50;
+        }
+
+        /* Leadership Team Section */
+        .leadership-team {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .card h5 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #7f8c8d;
+        }
+
+        /* Footer Section */
+        .footer {
+            background: #000;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+            font-size: 1rem;
+        }
+
+        .footer a {
+            color: #f1c40f;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                padding: 30px 5%;
+            }
+
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .mission-vision-section {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .key-highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .leadership-team {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header">
+        <img src="images/logo_clg.jpg" alt="Logo">
+        <h1>Prasad V Potluri Siddhartha</h1>
+        <div class="nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact Us</a>
+             <a href="placements.html">Placements</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h1>About Us</h1>
+        <p>Discover the legacy and vision behind Prasad V. Potluri Institute of Technology.</p>
+    </section>
+
+    <!-- Main Content Section -->
+    <section class="container">
+        <!-- About Section -->
+        <div class="about-section">
+            <img src="images/clg_pic_2.jpg" alt="PVPSIT Campus">
+            <div>
+                <h2>About Us</h2>
+                <p>Established in 1990, Prasad V. Potluri Institute of Technology is a premier educational institution committed to excellence in technical education and research. We aim to foster a robust learning environment for our students, blending cutting-edge technology with practical learning experiences.</p>
+            </div>
+        </div>
+
+        <!-- Mission and Vision Section -->
+        <div class="mission-vision-section">
+            <div>
+                <h3>Our Mission</h3>
+                <p>To provide world-class education that fosters innovation, critical thinking, and ethical practices, preparing students to contribute to society and lead with confidence.</p>
+            </div>
+            <div>
+                <h3>Our Vision</h3>
+                <p>To become a global leader in technical education by nurturing talent, encouraging research, and building partnerships with industry leaders.</p>
+            </div>
+        </div>
+
+        <!-- Key Highlights Section -->
+        <div class="key-highlights">
+            <div>
+                <i class="bi bi-mortarboard"></i>
+                <h4>30+ Years of Excellence</h4>
+                <p>We have been a pioneer in providing quality technical education since our inception.</p>
+            </div>
+            <div>
+                <i class="bi bi-building"></i>
+                <h4>Modern Campus</h4>
+                <p>Our campus is equipped with cutting-edge labs, libraries, and collaborative spaces.</p>
+            </div>
+            <div>
+                <i class="bi bi-globe"></i>
+                <h4>Global Network</h4>
+                <p>Our alumni work in leading organizations across 50+ countries worldwide.</p>
+            </div>
+        </div>
+
+        <!-- Leadership Team Section -->
+        <div class="leadership-team">
+            <div class="card">
+                <img src="images/principal.jpeg" alt="Principal">
+                <h5>Dr. K. Sivaji Babu</h5>
+                <p>Principal</p>
+                <p>"Leading PVPSIT towards academic and research excellence."</p>
+            </div>
+            <div class="card">
+                <img src="images/hod.jpeg" alt="Head of Department">
+                <h5>Dr. Jaya Lakshmi</h5>
+                <p>Head of the Dept CSE</p>
+                <p>"Shaping the curriculum to meet industry standards and student needs."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 Prasad V. Potluri Institute of Technology. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+    </footer>
+
+</body>
+</html>
